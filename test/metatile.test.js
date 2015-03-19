@@ -160,7 +160,7 @@ describe('metatile', function() {
             assert.deepEqual(render.calculateMetatile({ z: 2, x: 2, y: 0, metatile: 1, tileSize: 256 }), {
                 width: 256,
                 height: 256,
-                tiles: [ [2, 2, 0] ],
+                tiles: [ [2, 2, 0] ].map(addDims),
                 bbox: [ HALF, QUAD, QUADX, FULL ],
                 x: 2, y: 0
             });
@@ -304,7 +304,7 @@ describe('metatile', function() {
     
             assert.deepEqual(render.calculateMetatile({ z: 2, x: 3, y: 3, metatile: 3, tileSize: 256 }), {
                 width: 256, height: 256,
-                tiles: [ [2, 3, 3] ],
+                tiles: [ [2, 3, 3] ].map(addDims),
                 bbox: [ QUADX, -FULL, FULL, -QUADX ],
                 x: 3, y: 3
             });
